@@ -1,0 +1,30 @@
+Below is an organized list of further explanation of points
+throughout the analyzer.
+
+--Key--
+L = library 
+F = function 
+ff = inner function 
+
+
+L1.
+>enables the current program to utilize the requests library.
+>Sending HTTP requests (GET, POST, PUT, and DELETE) to web servers--
+ -- is made easier with the help of the requests library.
+>makes it possible for Python applications to communicate with web services and APIs
+ -- retrieve information from websites, and automate web communication activities. 
+
+ L2.
+ >a python library that is commonly used for web scraping.
+ > pulls data from HTML and XML files
+
+ L3.
+>splits a url string into its components
+>'join' makes URL "absolute" by joining the 'base' URL with another URL-->
+>uses components of the base URL (addressing scheme), the network location and path-->
+to provide missing components for the relative URL """
+
+F1.
+>To locate the Terms of Service page on a certain website, try using popular routes.
+ returns the first legitimate URL that appears to have a Terms of Service.
+    ff1. Joins base URL with common ToS paths 
