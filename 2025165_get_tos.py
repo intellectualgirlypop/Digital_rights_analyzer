@@ -1,8 +1,3 @@
-"""
-Author: Trinity Wilson 
-Email: Intellectualgirlypop@gmail.com
-Date started: 5/16/25
-"""
 #L1
 import requests
 #L2
@@ -14,9 +9,9 @@ TOS_PATH_NAMES = ["/terms","/terms-of-service","/legal/terms","tos"]
 #F1
 def get_tos_url(main_url):
     for path in TOS_PATH_NAMES:
-        #ff1
+        #ff1.1
         test_all_names = urljoin(main_url,path)
-        #ff2 
+        #ff1.2 
         try:
             good_response = requests.get(test_all_names,timeout=(5,10))
         except requests.RequestException:
@@ -24,8 +19,9 @@ def get_tos_url(main_url):
         if good_response.ok and "terms" in good_response.text.lower():
             return test_all_names
     return None
-
+#F2
 def get_text_url(url):
+    #ff2.1
     try:
         good_response = requests.get(url, timeout=(5,10))
         soup = BeautifulSoup(good_response.text,'html.parser')
@@ -36,4 +32,4 @@ def get_text_url(url):
         text = ' '.join(texts)
         return text.strip()
     except Exception as e:
-        return "Terms of service not found, please try again:" + str(e)
+        return "Error!please try again:" + str(e)

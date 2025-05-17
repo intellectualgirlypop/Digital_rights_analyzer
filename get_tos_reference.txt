@@ -27,4 +27,15 @@ to provide missing components for the relative URL """
 F1.
 >To locate the Terms of Service page on a certain website, try using popular routes.
  returns the first legitimate URL that appears to have a Terms of Service.
-    ff1. Joins base URL with common ToS paths 
+    ff1.1 > Joins base URL with common ToS paths 
+    ff1.2 >Check to see if the page exists and if it contains the word "terms"
+            >'continue' will skip any error causing URLs
+            >'return None' returns nothing if no terms are found
+
+F2.
+> Downloads and extracts the readable info from the text given by the terms of service URL-->
+also, strps down the html tags to paragraphs and lists to be able to summarize better
+   ff2.1 >finds all paragraph and list items 
+         > extracts texts from each tag and adds them to a list
+         >joins the list into one large string separated by a space for parsing
+         >'strip' cleans up whitespace

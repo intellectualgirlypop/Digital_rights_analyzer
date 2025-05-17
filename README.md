@@ -1,3 +1,7 @@
+Author: Trinity Wilson 
+Email: intellectualgirlypop@gmail.com
+Date started 5/16/25 
+
 # Digital_rights_analyzer
 Takes in the URL of an application or website, and spits out an easy-to-comprehend summary of their terms of service in user-friendly terms. It will also give back a traffic light response on its safety.
 
