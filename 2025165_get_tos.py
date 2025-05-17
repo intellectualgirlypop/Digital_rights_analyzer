@@ -16,3 +16,24 @@ def get_tos_url(main_url):
     for path in TOS_PATH_NAMES:
         #ff1
         test_all_names = urljoin(main_url,path)
+        #ff2 
+        try:
+            good_response = requests.get(test_all_names,timeout=(5,10))
+        except requests.RequestException:
+            continue
+        if good_response.ok and "terms" in good_response.text.lower():
+            return test_all_names
+    return None
+
+def get_text_url(url):
+    try:
+        good_response = requests.get(url, timeout=(5,10))
+        soup = BeautifulSoup(good_response.text,'html.parser')
+        paragraphs = soup.find_all(["p","li"])
+        texts = []
+        for tag in paragraphs:
+            texts.append(tag.get_text())
+        text = ' '.join(texts)
+        return text.strip()
+    except Exception as e:
+        return "Terms of service not found, please try again:" + str(e)
