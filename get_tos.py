@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 #L3
 from urllib.parse import urljoin
 
-TOS_PATH_NAMES = ["/terms","/terms-of-service","/legal/terms","tos"]
+TOS_PATH_NAMES = ["/terms","/terms-of-service","/legal/terms","tos","/legal","/legal/user"]
 #F1
 def get_tos_url(main_url):
     for path in TOS_PATH_NAMES:
