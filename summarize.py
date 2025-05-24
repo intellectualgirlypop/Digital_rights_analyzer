@@ -2,10 +2,11 @@
 import os
 #L2
 import anthropic
-#F
+#C1
 client = anthropic.Anthropic(api_key=os.getenv("your-api-key"))
-
+#F1
 def claude_summary(text,model="claude-3-5-haiku-20241022"):
+    #ff1.1
     try:
         message = client.messages.create(
             model=model,
@@ -16,11 +17,12 @@ def claude_summary(text,model="claude-3-5-haiku-20241022"):
                 {"role":"user","content": f"Summarize the following Terms of Service in clear and easy to understand language. Highlight user right, obligations, data usage, and any risky clauses:\n\n{text}"}
             ]
         )
-
+    #ff1.2
         return message.content[0].text.strip()
+    #ff1.3
     except Exception as e:
         return "Error summarizing text with Claude:" +str(e)
-
+#F2
 if __name__ == "__main__":
     tos_text = """
     By using our services, you agree to our data collection practices. We may share anonymized data with third parties.

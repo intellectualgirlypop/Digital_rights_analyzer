@@ -1,7 +1,58 @@
-Below is an organized list of further explanation of points
-throughout the analyzer.
+🌸Digital Rights Analyzer🌸
+ 'summarize terms of service'
+
+Below is an organized list of explanations for every library,
+function,and relevant elements used in the analyzer. 
 
 --Key--
-L = library 
-F = function 
-ff = inner function 
+L = library(External or built-in package used)
+F = function (A block of code that performs a specific task )
+   ff = function inner blocks 
+C = class (Object blueprint)
+
+Libraries 
+
+L1.
+-A standard Python library for interacting with the operating system 
+and accessing environment variables
+-Your secret API key is retrieved from a secure environment variable
+ using "os.getenv()"
+
+L2.
+-Anthropic's Claude API's official Python SDK (Software Development Kit)
+-enables Claude language models to respond to prompts and get responses from your software
+
+Class 
+C1.
+-uses your API key to authenticate and create an instance of the Anthropic class
+-the Claude model is called and the API is interacted with using this object (client)
+
+Functions
+F1.
+-forwards Claude a copy of the Terms of Service paper for a plain English summary.
+gives back a condensed synopsis emphasizing:
+    1.user rights
+
+    2.obligations
+
+    3.data usage
+
+    4.any risky clauses
+        >ff1.1
+        -Sends a prompt to the Claude model with the following parameters:
+
+        model: Claude version used (claude-3-5-haiku-20241022)
+
+        max_tokens: Maximum length of the response (800 tokens)
+
+        temperature: Controls randomness (0.5 = balanced)
+
+        system: Sets Claude’s role as a digital rights clarity assistant
+
+        messages: A user message asking Claude to simplify the terms of service
+        >ff1.2
+        -removes excess whitespace and extracts the response in plain text.
+        >ff1.3
+        -produces an error message in the event that something goes wrong (such as a faulty connection or API key)
+F2.
+-a test function to ensure everything works properly
