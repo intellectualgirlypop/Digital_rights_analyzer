@@ -1,7 +1,34 @@
-Below is an organized list of further explanation of points
-throughout the analyzer.
+🌸Digital Rights Analyzer🌸
+ 'risk level'
+
+Below is an organized list of explanations for every library,
+function,and relevant elements used in the analyzer. 
 
 --Key--
-L = library 
-F = function 
-ff = inner function 
+L = library(External or built-in package used)
+F = function (A block of code that performs a specific task )
+   ff = function inner blocks 
+C = class (Object blueprint)
+
+Libraries 
+L1.
+-module for regular expression
+-used to look for particular keywords that indicate danger in the text
+-robust pattern discovery is made possible by case-insensitive matching
+
+Functions 
+F1.
+-evaluates and assigns a digital risk assessment to the specified language 
+from a Terms of Service document:
+            High Risk 
+            Caution
+            Fair Terms
+- Scans for predefined red and yellow flags 
+    >ff1.1
+    -lists phrases that may indicate serious legal or data-related risks
+    >ff1.2
+    -lists phrases that may indicate uncertain language or possible data collection
+    signaling caution
+    >ff1.3
+    -a scoring system that determines the final digital rights warning 
+    (these flags are case-insensitive because of're.IGNORECASE')
