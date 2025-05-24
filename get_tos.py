@@ -11,7 +11,6 @@ def get_tos_url(main_url):
     for path in TOS_PATH_NAMES:
         #ff1.1
         test_all_names = urljoin(main_url,path)
-        #ff1.2 
         try:
             good_response = requests.get(test_all_names,timeout=(5,10))
         except requests.RequestException:
