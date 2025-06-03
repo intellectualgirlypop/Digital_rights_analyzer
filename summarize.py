@@ -3,7 +3,7 @@ import os
 #L2
 import anthropic
 #C1
-client = anthropic.Anthropic(api_key=os.getenv("your-api-key"))
+client = anthropic.Anthropic(api_key=os.getenv("API_Key"))
 #F1
 def claude_summary(text,model="claude-3-5-haiku-20241022"):
     #ff1.1
