@@ -28,20 +28,16 @@ L3.
 using the urljoin function 
 -gurantees that "/terms" URLs are transformed into full links
 
+Class 
+C1.
+-uses your API key to authenticate and create an instance of the Anthropic class
+-the Claude model is called and the API is interacted with using this object (client)
 
 Functions 
-F1. 
--attempts to find the website's terms of service page
-- yields the first valid path that contains the word "terms" after trying a set of known common paths 
-   >ff1.1
-   - creates a testable terms of service  URL by joining the main URL with a known path
-   -enables the combined URL to receive a request
-   -The link is returned if the response is acceptable and contains "terms" in the text content
-   -moves on to the following URL in order to gracefully handle failures
-F2.
+F1.
 -produces clear, legible text from a page's HTML content after downloading it
 -specifically made to function with ToS pages
-   >ff2.1
+   >ff1.1
    -parses the HTML output
    -extracts paragraph(<p>)and list (<li>) item tagged elements 
    -transforms the captured HTML into plain text to clean it up
